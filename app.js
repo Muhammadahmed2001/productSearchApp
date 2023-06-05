@@ -5,7 +5,7 @@ var onlineStotre = {
     bakery: {
         breadAndBuns: {
             burgerBun: {
-                name: "Bake Parlor Burger Bun 4's",
+                name: "Burger Bun 4's",
                 company: "Bake Parlor",
                 price: 95,
                 img: "pic/breadandbun/EDG190002089.webp",
@@ -37,8 +37,45 @@ var onlineStotre = {
                 img: "pic/breadandbun/milky.webp",
             }
         },
-        biscuits: {},
-        cake: {},
+        biscuits: {
+            cocomo : {
+                name : "Bisconni Cocomo Pouch 130g",
+                company : "Bisconni",
+                price : 59,
+                ime : "",
+            },
+            innovative : {
+                name : "Innovative Butter Crunch H/R Rs.20/- 6's Box",
+                company : "Innovative",
+                price : 105,
+                img : "",
+            },
+            gala : {
+                name : "LU Gala Egg S/P 6's Box",
+                company : "LU",
+                price : 159,
+                img : "",
+
+            },
+            Wheatable : {
+                name : "LU Wheatable Sugar Free F/P",
+                company : "LU",
+                price : 80,
+                img : "",
+            },
+            Wispy : {
+                name : "Hilal Wispy Wafer Rolls ChocoVanilla 12's Box",
+                company : "Hilal",
+                price : 179,
+                img : "",
+            },
+        },
+        cake: {
+            marbleCake : {},
+            bakeTimePlain : {},
+            
+
+        },
         rusks: {},
     },
     fresh: {},
@@ -57,22 +94,22 @@ function allItems() {
         main.innerHTML = main
         for (var cat in onlineStotre[main])
             for (var item in onlineStotre[main][cat]) {
+                console.log(item)
                 mainPage.innerHTML += `
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card h-100">
-            <img src="${onlineStotre[main][cat][item].img}" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
+                <div class="col">
+                <div class="card h-100 main-card">
+                    <img src="${ onlineStotre[main][cat][item].img }" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">${onlineStotre[main][cat][item].name}</h5>
+                        <p class="card-text">${onlineStotre[main][cat][item].company}</p>
+                    </div>
+                    <div class="card-footer price-tag">
+                        <small class="text-body-secondary price-color"><b> RS : ${onlineStotre[main][cat][item].price}</b></small>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-            </div>
-        </div>
-    </div>
-</div>`
+
+              `
 
             }
     }
