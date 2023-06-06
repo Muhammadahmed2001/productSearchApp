@@ -332,7 +332,7 @@ function allItems() {
                 console.log(item)
                 mainPage.innerHTML += `
                 <div class="col">
-                <div class="card h-100 main-card">
+                <div class="card main-card">
                     <img src="${onlineStotre[main][cat][item].img}" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">${onlineStotre[main][cat][item].name}</h5>
