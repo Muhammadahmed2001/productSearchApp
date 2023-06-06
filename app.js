@@ -220,98 +220,98 @@ var onlineStotre = {
 
     },
     frozen: {
-        chicken : {
-            kofta : {
-                name : "Sabroso Saver Kofta 900g Poly Bag",
-                company : "Sabroso",
-                price : 625,
-                img : "pic/frozen/kofta.webp",
+        chicken: {
+            kofta: {
+                name: "Sabroso Saver Kofta 900g Poly Bag",
+                company: "Sabroso",
+                price: 625,
+                img: "pic/frozen/kofta.webp",
             },
 
         },
-        frenchFries : {
-            friesOrignal : {
-                name : "OPA FRIES ORGNL 2KG",
-                company : "Opa",
-                price : 1095,
-                img : "pic/frozen/fries.webp",
+        frenchFries: {
+            friesOrignal: {
+                name: "OPA FRIES ORGNL 2KG",
+                company: "Opa",
+                price: 1095,
+                img: "pic/frozen/fries.webp",
             }
         },
-        puri : {
-            paratha : {
+        puri: {
+            paratha: {
 
-                name : "Dawn Lachha Paratha 4's 400g",
-                company : "Dawn",
-                price : 189,
-                img : "pic/frozen/paratha.webp",
+                name: "Dawn Lachha Paratha 4's 400g",
+                company: "Dawn",
+                price: 189,
+                img: "pic/frozen/paratha.webp",
             },
         },
-        pizza : {
-            dough : {
-                name : "Roy Qual Pizza Crust Medium",
-                company : "Roy Qual",
-                price : 95,
-                img : "pic/frozen/pizza.webp",
+        pizza: {
+            dough: {
+                name: "Roy Qual Pizza Crust Medium",
+                company: "Roy Qual",
+                price: 95,
+                img: "pic/frozen/pizza.webp",
             }
         },
     },
-    Beauty : {
-        oralCare : {
-            mouthWash : {
-                name : "Colgate Plax Mouth Wash Peppermint 250Ml",
-                company : "Colgate",
-                price : 400,
-                img : "pic/Beauty/mouthWash.webp",
+    Beauty: {
+        oralCare: {
+            mouthWash: {
+                name: "Colgate Plax Mouth Wash Peppermint 250Ml",
+                company: "Colgate",
+                price: 400,
+                img: "pic/Beauty/mouthWash.webp",
             },
-            brush : {
-                name : "Shield Tooth Brush Bamboo",
-                company : "Shield",
-                price : 164,
-                img : "pic/Beauty/toothbrush.webp",
+            brush: {
+                name: "Shield Tooth Brush Bamboo",
+                company: "Shield",
+                price: 164,
+                img: "pic/Beauty/toothbrush.webp",
             },
-            past : {
-                name : "CloseUp Tooth Gel Deep Action Menthol Fresh 50ml",
-                company : "CloseUp",
-                price : 249,
-                img : "pic/Beauty/past.webp",
+            past: {
+                name: "CloseUp Tooth Gel Deep Action Menthol Fresh 50ml",
+                company: "CloseUp",
+                price: 249,
+                img: "pic/Beauty/past.webp",
             },
         },
-        skinCare : {
-            honeyLotion : {
-                name : "Caresse Honey Lotion Pump Almond&Aloevera 320ml",
-                company : "Caresse",
-                price : 655,
-                img : "pic/Beauty/lotion.webp",
+        skinCare: {
+            honeyLotion: {
+                name: "Caresse Honey Lotion Pump Almond&Aloevera 320ml",
+                company: "Caresse",
+                price: 655,
+                img: "pic/Beauty/lotion.webp",
             }
         },
-        hairCare : {
-            hairBrush : {
-                name : "Maggie Hair Brush Art # 71-10-SHR",
-                company : "Maggie",
-                price : 739,
-                img : "pic/Beauty/hairBrush.webp",
+        hairCare: {
+            hairBrush: {
+                name: "Maggie Hair Brush Art # 71-10-SHR",
+                company: "Maggie",
+                price: 739,
+                img: "pic/Beauty/hairBrush.webp",
             }
         },
-        hygiene : {
-            Sanitizer : {
-                name : "Delite Hand Sanitizer Apple 60Ml",
-                company : "Delite",
-                price : 115,
-                img : "pic/Beauty/Sanitizer.webp",
+        hygiene: {
+            Sanitizer: {
+                name: "Delite Hand Sanitizer Apple 60Ml",
+                company: "Delite",
+                price: 115,
+                img: "pic/Beauty/Sanitizer.webp",
             }
         },
-        fragrances : {
-            bluOud : {
-                name : "Lattafa EDP Blue Oud 100ml",
-                company : "Lattafa",
-                price : 4500,
-                img : "pic/Beauty/blue.webp",
+        fragrances: {
+            bluOud: {
+                name: "Lattafa EDP Blue Oud 100ml",
+                company: "Lattafa",
+                price: 4500,
+                img: "pic/Beauty/blue.webp",
             },
-            tagHim : {
-                name : "Armaf EDT Tag-Him Pour Homme 100ml",
-                company : "Armaf",
-                price : 4500,
-                img : "pic/Beauty/tagHim.webp",
+            tagHim: {
+                name: "Armaf EDT Tag-Him Pour Homme 100ml",
+                company: "Armaf",
+                price: 4500,
+                img: "pic/Beauty/tagHim.webp",
             }
 
         },
@@ -325,11 +325,12 @@ var onlineStotre = {
 var mainPage = document.getElementById("mainPage");
 
 function allItems() {
+    mainPage.innerHTML = ""
     for (var main in onlineStotre) {
         main.innerHTML = main
         for (var cat in onlineStotre[main])
             for (var item in onlineStotre[main][cat]) {
-                console.log(item)
+                // console.log(item)
                 mainPage.innerHTML += `
                 <div class="col">
                 <div class="card main-card">
@@ -350,3 +351,34 @@ function allItems() {
     }
 }
 allItems()
+
+
+function selection(category) {
+    mainPage.innerHTML = ""
+
+    for (var key in onlineStotre[category]) {
+        for(var product in onlineStotre[category][key]){
+
+            // console.log(product.price)
+            mainPage.innerHTML += `
+                <div class="col">
+                <div class="card main-card">
+                <img src="${onlineStotre[category][key][product].img}" class="card-img-top" alt="">
+                <div class="card-body">
+                <h5 class="card-title">${onlineStotre[category][key][product].name}</h5>
+                <p class="card-text">${onlineStotre[category][key][product].company}</p>
+                </div>
+                <div class="card-footer price-tag">
+                <small class="text-body-secondary price-color"><b> RS : ${onlineStotre[category][key][product].price}</b></small>
+                </div>
+                </div>
+                </div>
+    
+                `
+        }
+
+
+    }
+
+}
+// selection();
